@@ -1,24 +1,24 @@
 # -*- coding: UTF-8 -*-
 
 # 定义初始高度
-H0 = 100
+init_height = 100
 
 # 定义初始累加器
-SUM = 0
-SUM += H0
-print('No.%2d - Hn=%10f\tSUM=%f' % (1, H0, SUM))
+sum = 0
+sum += init_height
+print('No.%2d - Current height=%10f\tSUMMARY=%f' % (1, init_height, sum))
 
 # 定义弹跳次数
 times = 20
 # 定义第二次弹跳高度与前一次之比
 rate = 0.5
 
-Hn = H0 * rate
+next_height = init_height * rate
 for n in range(2, times + 1):
-    SUM += 2 * Hn
-    print('No.%2d - Hn=%10f\tSUM=%f' % (n, Hn, SUM))
-    Hn *= rate
+    sum += 2 * next_height
+    print('No.%2d - Current height=%10f\tSUMMARY=%f' % (n, next_height, sum))
+    next_height *= rate
 
 print('\n')
-print('Total of road is %f' % SUM)
-print('The tenth is %f meter' % (Hn/rate))
+print('Total of road is %f' % sum)
+print('The tenth is %f meter' % (next_height/rate))
